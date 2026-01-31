@@ -24,26 +24,27 @@ int NumberElements(int* Arr, int SIZE, int ref_point)
     int high = SIZE;
     int mid;
 
-    while (low < high) {
+    while ((low <= high)&&(low < SIZE -1)) {
         mid = low + (high - low) / 2;
         
         if ( Arr[mid] > ref_point ) 
         {
-            std::cout << low << " " << high << "  " << Arr[mid] << " " << mid << std::endl;
+           
             high = mid - 1;
         }
         else
         {
-            std::cout << low << " " << high << "  " << Arr[mid] << " " << mid << std::endl;
+            
             low = mid + 1;
         }
         
         if (ref_point < Arr[low])
         {
-            std::cout << "Rez " << low << " " << high << "  " << Arr[low] << " " << mid << std::endl;
+            
             return Number_Elements = SIZE-low;
         }
     }
+    return Number_Elements;
 
 }
 
